@@ -1,0 +1,10 @@
+#main { min-height: 500px; }
+
+/* 로고에 커서를 올리면 모양이 손모양으로 바뀜 */
+#logo:hover { cursor: pointer }
+
+/* 게시판 테이블 스타일링 */
+.tbborder { border-bottom: 3px solid black; border-top: 3px solid black }
+.thbg { background: #dff0d8 }
+tr { border-bottom: 1px solid silver }
+.active2 { color: red !important; font-size: 35px !important; }
