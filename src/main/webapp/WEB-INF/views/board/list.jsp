@@ -21,13 +21,12 @@
     // ex) cp = 1 : 1 2 3 4 5 6 7 8 9 10 다음
     // ex) cp = 3 : 1 2 3 4 5 6 7 8 9 10 다음
     // ex) cp = 9 : 1 2 3 4 5 6 7 8 9 10 다음
-    // ex) cp = 11 : 이전 11 12 13 14 15 16 17 18 19 20 다음  11페이지면 이전이 작동해야함
+    // ex) cp = 11 : 이전 11 12 13 14 15 16 17 18 19 20 다음
     // ex) cp = 15 : 이전 11 12 13 14 15 16 17 18 19 20 다음
     // ex) cp = 23 : 이전 21 22 23 24 25 26 27 28 29 30 다음
     // ex) cp = 52: 이전 51 52 53 54 55
     // startPage = ((cp - 1) / 10) * 10 + 1
     // endPage = startPage + 10 - 1
-
 %>
 
 
@@ -54,8 +53,8 @@
                 <input type="text" class="form-control col-2" id="findkey"></div>
 
             <div class="col-3">
-            <button type="button" class="btn btn-light">
-                <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>
+                <button type="button" class="btn btn-light">
+                    <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>
         </div>
         <div class="col-2 text-end">
             <button type="button" class="btn btn-light">
@@ -67,30 +66,30 @@
         <div class="offset-2 col-8">
             <table class="table table-striped tbborder">
                 <thead class="thbg">
-                    <tr><th style="width: 7%">번호</th>
-                        <th>제목</th>
-                        <th style="width: 13%">작성자</th>
-                        <th style="width: 13%">작성일</th>
-                        <th style="width: 7%">추천</th>
-                        <th style="width: 7%">조회</th></tr>
+                <tr><th style="width: 7%">번호</th>
+                    <th>제목</th>
+                    <th style="width: 13%">작성자</th>
+                    <th style="width: 13%">작성일</th>
+                    <th style="width: 7%">추천</th>
+                    <th style="width: 7%">조회</th></tr>
                 </thead>
                 <tbody>
-                    <tr><th>공지</th>
-                        <th><span class="badge text-bg-danger">hot!</span>
+                <tr><th>공지</th>
+                    <th><span class="badge text-bg-danger">hot!</span>
                         석가탄신일·성탄절 대체공휴일 확정</th>
-                        <th>운영자</th>
-                        <th>2023-05-04</th>
-                        <th>567</th>
-                        <th>1345</th></tr>
+                    <th>운영자</th>
+                    <th>2023-05-04</th>
+                    <th>567</th>
+                    <th>1345</th></tr>
 
-                    <c:forEach items="${bdlist}" var="bd">
-                        <tr><td>${bd.bno}</td>
-                            <td>${bd.title}</td>
-                            <td>${bd.userid}</td>
-                            <td>${fn:substring(bd.regdate, 0, 10)}</td>
-                            <td>${bd.thumbs}</td>
-                            <td>${bd.views}</td></tr>
-                    </c:forEach>
+                <c:forEach items="${bdlist}" var="bd">
+                    <tr><td>${bd.bno}</td>
+                        <td>${bd.title}</td>
+                        <td>${bd.userid}</td>
+                        <td>${fn:substring(bd.regdate, 0, 10)}</td>
+                        <td>${bd.thumbs}</td>
+                        <td>${bd.views}</td></tr>
+                </c:forEach>
 
                 </tbody>
             </table>
@@ -103,16 +102,19 @@
                 <ul class="pagination justify-content-center">
                     <c:if test="${cpg - 1 gt 0}"><li class="page-item"></c:if>
                     <c:if test="${cpg - 1 le 0}"><li class="page-item disabled"></c:if>
-                        <a class="page-link" href="${pglink}${cpg-1}">이전</a></li>
+                    <a class="page-link" href="${pglink}${cpg-1}">이전</a></li>
 
-                    <c:forEach var="i" begin="${stpg}" end="${stpg+10-1}">
-                        <c:if test="${i ne cpg}"><li class="page-item"></c:if>
-                        <c:if test="${i eq cpg}"><li class="page-item active"></c:if>
+                    <c:forEach var="i" begin="${stpg}" end="${stpg + 10 - 1}">
+                        <c:if test="${i le cntpg}">
+                            <c:if test="${i ne cpg}"><li class="page-item"></c:if>
+                            <c:if test="${i eq cpg}"><li class="page-item active"></c:if>
                             <a class="page-link" href="${pglink}${i}">${i}</a></li>
+                        </c:if>
                     </c:forEach>
 
-                    <li class="page-item">
-                        <a class="page-link" href="${pglink}${cpg+1}">다음</a></li>
+                    <c:if test="${(cpg+1) lt cntpg}"><li class="page-item"></c:if>
+                    <c:if test="${(cpg+1) gt cntpg}"><li class="page-item disabled"></c:if>
+                    <a class="page-link" href="${pglink}${cpg+1}">다음</a></li>
                 </ul>
             </nav>
         </div>

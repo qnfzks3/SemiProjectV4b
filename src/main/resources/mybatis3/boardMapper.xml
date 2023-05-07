@@ -3,12 +3,14 @@
 <mapper namespace="board">
 
     <select id="selectBoard" statementType="PREPARED"
-        parameterType="int"
-        resultType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
-         select bno, title, userid, thumbs, views, regdate from boardv4
-         order by bno desc limit #{stbno}, 25
+            parameterType="int"
+            resultType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
+        select bno, title, userid, thumbs, views, regdate from boardv4
+        order by bno desc limit #{stbno}, 25
     </select>
 
-
+    <select id="countBoard" statementType="PREPARED" resultType="int">
+        select ceil(count(bno)/25) cnt from boardv4
+    </select>
 
 </mapper>

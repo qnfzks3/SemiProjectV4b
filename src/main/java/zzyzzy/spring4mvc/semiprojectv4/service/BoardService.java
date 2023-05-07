@@ -8,4 +8,5 @@ public interface BoardService {
 
     List<Board> readBoard(int cpage);
 
+    int countBoard();
 }
