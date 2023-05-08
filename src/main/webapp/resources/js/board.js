@@ -2,6 +2,10 @@ const findtype = document.querySelector("#findtype"); // 프론트 jsp파일에�
 const findkey = document.querySelector("#findkey"); //
 const findbtn = document.querySelector("#findbtn"); //
 
+
+/*js는 jsp에서 만든 프론트들에 대한 행동들 정의하는곳  ex 버튼을 클릭하면 이벤트 발생등*/
+
+
 findbtn?.addEventListener('click',()=>{  // 컨트롤러에 있는 변수들 가져와서
 
     if(findkey.value=='') { //검색을 아무것도 안하면 경고창만 뜨게하기
