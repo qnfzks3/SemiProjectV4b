@@ -53,7 +53,7 @@
                 <input type="text" class="form-control col-2" id="findkey"></div>
 
             <div class="col-3">
-                <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light" id="findbtn">
                     <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>
         </div>
         <div class="col-2 text-end">

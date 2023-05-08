@@ -16,7 +16,7 @@
         select bno, title, userid, thumbs, views, regdate from boardv4
 
         <if test="ftype != 'titcont'">
-            where ${ftype} like concat(#{fkey}, '%')</if>
+            where ${ftype} like concat(#{fkey}, '%')</if>  /*concat이렇게 하면 %가 앞뒤로 있어야하지만 여긴 뒤만있기에 다안나옴*/
 
         <if test="ftype == 'titcont'">
             where title like concat(#{fkey}, '%') or
