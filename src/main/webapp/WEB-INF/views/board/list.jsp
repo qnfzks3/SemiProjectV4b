@@ -50,7 +50,8 @@
                 </select></div>
 
             <div class="col-4">
-                <input type="text" class="form-control col-2" id="findkey"></div>
+                <input type="text" class="form-control col-2" id="findkey" value="${param.fkey}"></div>
+            <%--${param.fkey}이렇게 쓰면 주소창에 값을 가져온다. - 검색어 그대로 인풋창에 적혀있게 남기기--%>
 
             <div class="col-3">
                 <button type="button" class="btn btn-light" id="findbtn">

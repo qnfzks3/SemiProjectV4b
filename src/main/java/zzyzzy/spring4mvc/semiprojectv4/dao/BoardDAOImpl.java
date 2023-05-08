@@ -29,8 +29,9 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int countBoard(Map<String, Object> params) {
-        return 0;
+    public int countBoard(Map<String, Object> params) {//Map<String, Object> params => Map <타입, 값 > Params
+        return sqlSession.selectOne("board.countFindBoard",params); //sql문을 쓰기위해서 지정해줌
+
     }
 
 }
