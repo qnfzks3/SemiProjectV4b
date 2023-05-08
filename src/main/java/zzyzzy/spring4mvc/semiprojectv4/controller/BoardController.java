@@ -49,8 +49,8 @@ public class BoardController {
 
     @PostMapping("/write")
     public String writeok(Board bd){   //이름이 같으면 오류남
-        String viewPage ="error.tiles";
-        if(bdsrv.newBoard(bd)){   //
+        String viewPage ="error.tiles";   //error페이지
+        if(bdsrv.newBoard(bd)){   //만약 Service에 newBoard(bd)가
             viewPage="redirect:/board/list?cpg=1";
         }
 
