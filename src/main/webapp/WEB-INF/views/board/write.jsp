@@ -1,7 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-
+<c:if test="${empty sessionScope.UID}"> <%--만약 sessionScope이 비었다면 = uid 가 비어있다면 - 로그인이 안되어있다면--%>
+    <script>location.href="/";</script>   <%--처음페이지로 이동하도록(write페이지 못 이용하도록)--%>
+</c:if>
 
 
 <div id="main">
