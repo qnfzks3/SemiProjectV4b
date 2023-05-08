@@ -9,8 +9,23 @@
         order by bno desc limit #{stbno}, 25
     </select>
 
+    <!-- 동적 질의문으로 검색기능 구현 -->
+    <!-- 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용! -->
+    <select id="selectFindBoard" statementType="PREPARED" parameterType="map"
+            resultType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
+        select bno, title, userid, thumbs, views, regdate from boardv4
+
+        <if test="ftype != 'titcont'">
+            where ${ftype} like concat(#{fkey}, '%')</if>
+
+        <if test="ftype == 'titcont'">
+            where title like concat(#{fkey}, '%') or
+            content like concat(#{fkey}, '%')</if>
+
+        order by bno desc limit #{stbno}, 25
+    </select>
+
     <select id="countBoard" statementType="PREPARED" resultType="int">
         select ceil(count(bno)/25) cnt from boardv4
     </select>
-
 </mapper>
