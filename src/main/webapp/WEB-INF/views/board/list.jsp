@@ -33,7 +33,7 @@
 <%--컨트롤러에서 list와 find로 두개를 나누었기 때문에 이렇게 한번 더 써준다.--%>
 <c:set var="pglink" value="/board/list?cpg=" />  <%--검색 기능이 작동되지 않는 목록 조회--%>
 
-<c:if test="${not empty param.fkey}"><%--검색 기능이 포함된 목록 조회--%><%--검색한 주소창에 검색어를 기준으로 접근하자--%>
+<c:if test="${not empty param.fkey}"><%--검색 기능이 포함된 목록 조회--%><%--검색한 주소창에 검색어를 기준으로 접근하자 if문 사용--%>
     <c:set var="pglink" value="/board/find?ftype=${param.ftype}&fkey=${param.fkey}&cpg=" />
 
 </c:if>
