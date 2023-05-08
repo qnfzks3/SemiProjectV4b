@@ -51,7 +51,7 @@ public class BoardController {
     public String writeok(Board bd){   //이름이 같으면 오류남
         String viewPage ="error.tiles";
         if(bdsrv.newBoard(bd)){   //
-            viewPage="redirect:/board/list.tiles";
+            viewPage="redirect:/board/list?cpg=1";
         }
 
         return viewPage;
