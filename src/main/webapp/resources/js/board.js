@@ -18,6 +18,21 @@ findbtn?.addEventListener('click',()=>{  // 컨트롤러에 있는 변수들 가
 
 
 
+const writebtn =document.querySelector("#writebtn");
+
+writebtn?.addEventListener('click',()=>{ //jsp에 있는 인풋의 name에 적힌 이름=> 폼에 적힌 인풋네임  bdfrm.title
+    const bdfrm=document.forms.bdfrm;
+    if(bdfrm.title.value ==='') alert('제목을 작성해주세요');
+    else if(bdfrm.content.value ==='') alert('본문을 작성해주세요!');
+    else if(grecaptcha.getResponse()==='') alert('자동가입방지 체크가 안되어있습니다.');
+    else{
+        bdfrm.method = 'post';
+        bdfrm.submit();
+
+    }
+
+});
+
 
 
 

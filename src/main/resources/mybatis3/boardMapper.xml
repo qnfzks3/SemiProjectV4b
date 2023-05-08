@@ -45,8 +45,14 @@
         </if>
 
 
-
     </select>
+
+    <insert id="insertBoard" statementType="PREPARED" parameterType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
+        insert into boardv4(title,userid,content)
+            values (#{title},#{userid},#{content});
+    </insert>
+    
+    
 
 
 </mapper>

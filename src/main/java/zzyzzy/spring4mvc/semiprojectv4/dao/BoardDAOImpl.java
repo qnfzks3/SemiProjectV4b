@@ -39,4 +39,13 @@ public class BoardDAOImpl implements BoardDAO {
                                                                         //데이터 저장 컬렉션 같은 느낌이라고 보면됨
     }
 
+
+    @Override
+    public int insertBoard(Board bd) {
+        return sqlSession.insert("board.insertBoard",bd);
+    }
+
+
+
+
 }

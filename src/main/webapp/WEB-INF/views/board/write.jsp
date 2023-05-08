@@ -39,7 +39,8 @@
                 <div class="row mt-2">
                     <label class="col-3 col-form-label text-danger text-end" for="userid">작성자</label>
                     <div class="col-6">
-                        <input type="text" name="title" id="userid" class="form-control border-danger bg-light" value="abc123" readonly>
+                        <input type="text" name="userid" id="userid" class="form-control border-danger bg-light"
+                               value="abc123" readonly>
                     </div>
                 </div>
 
@@ -47,8 +48,8 @@
                 <div class="row mt-2">
                     <label class="col-3 col-form-label text-danger text-end" for="content">본문 내용</label>
                     <div class="col-6">
-                        <textarea name="title" id="content" class="form-control border-danger" rows="15"></textarea>
-
+                        <textarea name="content" id="content" class="form-control border-danger" rows="15"></textarea>
+                            <%--rows 는  쓸수 있는 줄수 name을 만약 잘못쓰면 js,model에서 가져올때 name으로 가져오기때문에 오류가 난다.--%>
                     </div>
                 </div>
 
