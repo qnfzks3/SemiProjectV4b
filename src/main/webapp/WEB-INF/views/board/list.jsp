@@ -63,7 +63,7 @@
                     <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>
         </div>
         <div class="col-2 text-end">
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light" id="newbtn">
                 <i class="fa fa-plus-circle"> </i> 새글쓰기</button>
         </div>
     </div>

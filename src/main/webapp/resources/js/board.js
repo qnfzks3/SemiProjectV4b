@@ -33,6 +33,11 @@ writebtn?.addEventListener('click',()=>{ //jsp에 있는 인풋의 name에 적�
 
 });
 
+newbtn?.addEventListener('click',()=>{
+   location.href='/board/write';       //location.href 가고싶은 주소로 위치 이동
+    
+});
+
 
 
 
