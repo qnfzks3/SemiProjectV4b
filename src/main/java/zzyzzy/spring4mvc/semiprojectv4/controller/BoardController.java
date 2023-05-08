@@ -38,4 +38,16 @@ public class BoardController {
         return mv;
     }
 
+
+
+    @GetMapping("/write")
+    public String write(){
+        return "board/write.tiles";
+    }
+
+    @GetMapping("/view")
+    public String view(){
+        return "board/view.tiles";
+    }
+
 }
