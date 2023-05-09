@@ -32,7 +32,8 @@
     </select>
 
     <select id="countFindBoard" statementType="PREPARED" parameterType="map" resultType="int">
-        /*검색할 시 아래 페이지 네이션이 사라진다. 이부분을 만들어보자! dao 에서 가져다 쓰도록*/
+        /*검색할 시 아래 페이지 네이션이 사라진다. 이부분을 만들어보자! dao 에서 가져다 쓰도록
+        parameterType 받아올 타입  , resultType 내보내는 결과 타입 */
 
         select ceil(count(bno)/25) from boardv4
         <if test="ftype != 'titcont'">
@@ -56,7 +57,10 @@
 
         select * from boardv4 where bno = #{bno}
     </select>
-    
+
+    <update id="countViewBoard" statementType="PREPARED" parameterType="String" >
+        update boardv4 set views= views+1 where bno = #{bno}
+    </update>
 
 
 </mapper>
