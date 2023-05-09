@@ -50,7 +50,7 @@
 
 
         <div class="row offset-2 col-4" >   <%--반반 나눠준다. col-4--%>
-            <%--로그인이 안됬거나 userid와 작성자userid가 같아야아래 실행 eq 는 같은지 --%>
+            <%--로그인이 안됬거나 userid와 작성자userid가 같아야아래 실행 eq 는 같은지 여부 판단 - true false --%>
             <c:if test="${not empty sessionScope.UID and sessionScope.UID eq bd.userid}">
                 <button type="button" class="btn btn-warning col-4" id="prevbtn"><i class="fa fa-pencil"></i> 수정하기</button>
             &nbsp;
