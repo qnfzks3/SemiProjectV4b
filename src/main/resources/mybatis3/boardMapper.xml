@@ -51,7 +51,11 @@
         insert into boardv4(title,userid,content)
             values (#{title},#{userid},#{content});
     </insert>
-    
+
+    <select id="selectOneBoard" statementType="PREPARED" parameterType="String" resultType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
+
+        select * from boardv4 where bno = #{bno}
+    </select>
     
 
 

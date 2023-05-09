@@ -3,7 +3,7 @@ const findkey = document.querySelector("#findkey"); //
 const findbtn = document.querySelector("#findbtn"); //
 
 
-/*js는 jsp에서 만든 프론트들에 대한 행동들 정의하는곳  ex 버튼을 클릭하면 이벤트 발생등*/
+/*js는 jsp에서 만든 프론트들에 대한 행동들 정의하는곳  ex 버튼을 클릭하면 이벤트 발생등 - 이벤트를 걸자!*/
 
 
 findbtn?.addEventListener('click',()=>{  // 컨트롤러에 있는 변수들 가져와서
@@ -42,7 +42,19 @@ newbtn?.addEventListener('click',()=>{
     
 });
 
+const prevbtn = document.querySelector("#prevbtn");
+const nextbtn = document.querySelector("#nextbtn");
+const listbtn = document.querySelector("#listbtn"); //가져와서
+
+prevbtn?.addEventListener('click',()=>{ //리스너로 이벤트를 걸어주자!
 
 
+});
+nextbtn?.addEventListener('click',()=>{
 
+
+});
+listbtn?.addEventListener('click',()=>{
+    location.href = '/board/list?cpg=1';
+});
 

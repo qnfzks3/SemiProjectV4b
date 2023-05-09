@@ -46,6 +46,8 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
 
-
-
+    @Override
+    public Board selectOneBoard(String bno) {
+        return sqlSession.selectOne("board.selectOneBoard", bno);
+    }
 }

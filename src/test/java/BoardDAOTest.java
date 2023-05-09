@@ -56,5 +56,11 @@ public class BoardDAOTest {
 
     }
 
+    @Test
+    public void selectOneBoard() {
+        assertNotNull(sqlSession.selectOne("board.selectOneBoard", "123"));
+    }
+
+
 
 }

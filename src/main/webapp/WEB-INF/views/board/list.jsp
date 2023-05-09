@@ -103,8 +103,8 @@
 
                 <c:forEach items="${bdlist}" var="bd">
                     <tr><td>${bd.bno}</td>
-                        <td>${bd.title}</td>
-                        <td>${bd.userid}</td>
+                        <td><a href="/board/view?bno=${bd.bno}">${bd.title}</a> </td> <%--제목을 누를시 view로 넘어가도록 - bno로 주소를 보낸다.--%>
+                        <td>${bd.userid}</td>                         <%--그렇다면 bno를 가지고 어떻게 주소창에 bno를 넣는것만으로 bno 데이터가 맞게 채워지는걸까?--%>
                         <td>${fn:substring(bd.regdate, 0, 10)}</td>
                         <td>${bd.thumbs}</td>
                         <td>${bd.views}</td></tr>

@@ -15,6 +15,7 @@ public interface BoardDAO {
     int insertBoard(Board bd);
 
 
+    Board selectOneBoard(String bno);
 }
 
 
