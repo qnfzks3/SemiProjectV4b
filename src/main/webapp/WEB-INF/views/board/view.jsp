@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   <%--보통 조건 만족 할때 보이게 안보이게 조정하기위해 if--%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
@@ -50,10 +50,12 @@
 
 
         <div class="row offset-2 col-4" >   <%--반반 나눠준다. col-4--%>
-            <button type="button" class="btn btn-warning col-4" id="prevbtn"><i class="fa fa-pencil"></i> 수정하기</button>
+            <%--로그인이 안됬거나 userid와 작성자userid가 같아야아래 실행 eq 는 같은지 --%>
+            <c:if test="${not empty sessionScope.UID and sessionScope.UID eq bd.userid}">
+                <button type="button" class="btn btn-warning col-4" id="prevbtn"><i class="fa fa-pencil"></i> 수정하기</button>
             &nbsp;
-            <button type="button" class="btn btn-danger col-4"  id="nextbtn"><i class="fa fa-trash-o"></i> 삭제하기</button>
-
+                <button type="button" class="btn btn-danger col-4"  id="nextbtn"><i class="fa fa-trash-o"></i> 삭제하기</button>
+            </c:if>
         </div>
 
 
