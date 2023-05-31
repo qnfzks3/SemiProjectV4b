@@ -78,3 +78,7 @@ public class Board {
         this.regdate = regdate;
     }
 }
+
+
+
+
