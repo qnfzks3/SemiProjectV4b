@@ -24,6 +24,8 @@
     <dependencies>
 
         <!-- spring4 -->
+
+        <!--jakarta는 스프링 프레임워크와 별개의 프레임 워크이기 때문에 스프링을 쓰기 위해 spring-context 모듈에 대한 의존성을 추가한다. -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -36,11 +38,17 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--Spring Web MVC 모듈 사용할 수 있도록 의존성 추가-->
+        <!-- Spring Web MVC 모듈: 매핑, URL 처리, 뷰 렌더링, 폼 처리, 세션 관리, 데이터 바인딩 등을 처리-->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!--JDBC를 기반으로 한 데이터베이스 연동을 스프링 프레임워크에서 편리하게 사용할 수 있도록 지원-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -126,6 +134,8 @@
             <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--JSTL-->
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
@@ -138,6 +148,8 @@
         </dependency>
 
         <!-- tiles3 -->
+
+        <!--일관된(공통된) 레이아웃(jsp)을 적용하시키고 생성을 도와줌-->
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-servlet</artifactId>
@@ -163,6 +175,7 @@
         </dependency>
 
         <!-- junit4 -->
+        <!--JUnit은 테스트 케이스를 작성하고 실행하는 데 필요한 도구와 어노테이션을 제공하여 개발자들이 효율적으로 테스트를 수행할 수 있도록 도와줍니다.-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
