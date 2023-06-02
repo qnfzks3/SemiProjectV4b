@@ -7,7 +7,9 @@
             resultType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
         select bno, title, userid, thumbs, views, regdate from boardv4
         order by bno desc limit #{stbno}, 25
-    </select>
+    </select> <!--parameterType="int"는 가져오는 타입을 말하는데 #{stbno}가 int이기 때문에-->
+            <!--#{stbno}는 repository에서 가져오는 것이다 그래서 service에서 부터 시작해서 정의되고 mapper로 전달됨-->
+
 
     <!-- 동적 질의문으로 검색기능 구현 -->
     <!-- 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용! -->
@@ -33,7 +35,8 @@
 
     <select id="countFindBoard" statementType="PREPARED" parameterType="map" resultType="int">
         /*검색할 시 아래 페이지 네이션이 사라진다. 이부분을 만들어보자! dao 에서 가져다 쓰도록
-        parameterType 받아올 타입  , resultType 내보내는 결과 타입 */
+        parameterType 받아올 타입  ,
+        resultType 내보내는 결과 타입 ,model은 전체 , map으로는 sql로 가져올 칼럼명들이 map에 저장 ,후에 보내냄*/
 
         select ceil(count(bno)/25) from boardv4
         <if test="ftype != 'titcont'">

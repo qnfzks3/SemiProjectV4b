@@ -16,14 +16,14 @@ public class BoardController {
     @Autowired private BoardService bdsrv;
 
     @GetMapping("/list")
-    public ModelAndView list(int cpg) {
+    public ModelAndView list(int cpg) { //컨트롤러의 매개변수는 주소창에 ?cpg=1 로 나태내어 매개변수 값을 1로 넣어주는것이다.
         ModelAndView mv = new ModelAndView();
         mv.setViewName("board/list.tiles");
 
-        mv.addObject("bdlist", bdsrv.readBoard(cpg));
-        mv.addObject("cpg", cpg);
-        mv.addObject("stpg", ((cpg - 1) / 10) * 10 + 1);
-        mv.addObject("cntpg", bdsrv.countBoard());
+        mv.addObject("bdlist", bdsrv.readBoard(cpg));   //sql문으로 페이지에 출력하는 데이터
+        mv.addObject("cpg", cpg);                        //cpg로 페이지네이션 위치 표시
+        mv.addObject("stpg", ((cpg - 1) / 10) * 10 + 1);  //시작 페이지 계산하기
+        mv.addObject("cntpg", bdsrv.countBoard());       //총 페이지 수
 
         return mv;
     }
@@ -48,9 +48,9 @@ public class BoardController {
     }
 
     @PostMapping("/write")
-    public String writeok(Board bd){   //이름이 같으면 오류남
+    public String writeok(Board bd){   //이름이 같으면 오류남  postMapping은 동작들 오류가나면 이쪽으로 정상작동이면 이쪽으로
         String viewPage ="error.tiles";   //error페이지
-        if(bdsrv.newBoard(bd)){   //만약 Service에 newBoard(bd)가
+        if(bdsrv.newBoard(bd)){   //만약 Service에 newBoard(bd)가 참,1 이라면 아래 주소로 실행해라
             viewPage="redirect:/board/list?cpg=1";
         }
 
